@@ -1,0 +1,108 @@
+name: AAC
+version: 1.9.10
+main: me.konsolas.aac.AAC
+author: konsolas
+description: AAC prevents and kicks suspected hackers from your server.
+depend: [ProtocolLib]
+commands:
+   aac:
+      description: Display version information
+      usage: /<command>
+      permission: AAC.version
+      permission-message: You do not have permission to perform that command.
+   aacunban:
+      description: Unban a player
+      usage: /<command> [player]
+      permission: AAC.unban
+      permission-message: You do not have permission to perform that command.
+   aacadmin:
+      description: Open a GUI with options to manage AAC
+      usage: /<command>
+      permission: AAC.admin
+      permission-message: You do not have permission to perform that command.
+   aackick:
+      description: Kill and kick a player, broadcasting this.
+      usage: /<command> [player] [reason]
+      permission: AAC.kick
+      permission-message: You do not have permission to perform that command.
+   aacban:
+      description: Ban a player with AAC's ban system.
+      usage: /<command> [player]
+      permission: AAC.ban
+      permission-message: You do not have permission to perform that command.
+   aacreload:
+      description: Text based reload
+      usage: /<command>
+      permission: AAC.admin
+      permission-message: You do not have permission to perform that command.
+   aacdebug:
+      description: Save a file with detailed information on a player
+      usage: /<command> [player]
+      permission: AAC.debug
+      permission-message: You do not have permission to perform that command.
+   aacverbose:
+      description: Toggle verbose output
+      usage: /<command>
+      permission: AAC.verbose
+      permission-message: You do not have permission to perform that command.
+   aacmessage:
+      description: Send a message to the player from AAC
+      usage: /<command> [player] [message]
+      permission: AAC.message
+      permission-message: You do not have permission to perform that command.
+   aacstaffnotify:
+      description: Send a message to all members of staff
+      usage: /<command> [message]
+      permission: AAC.notify
+      permission-message: You do not have permission to perform that command.
+   aaccrash:
+      description: Crash a player with lots of lag. This does not formally kick the player.
+      usage: /<command> [player]
+      permission: AAC.crash
+      permission-message: You do not have permission to perform that command.
+permissions:
+   AAC.*:
+      description: Gives access to all AAC permissions.
+      children:
+         AAC.version: true
+         AAC.admin: true
+         AAC.unban: true
+         AAC.kick: true
+         AAC.bypass: true
+         AAC.debug: true
+         AAC.crash: true
+         AAC.message: true
+         AAC.notify: true
+   AAC.version:
+      description: Display version information
+      default: true
+   AAC.unban:
+      description: Unban a player
+      default: op
+   AAC.kick:
+      description: Kill and kick a player
+      default: op
+   AAC.ban:
+      description: Ban a player
+      default: op
+   AAC.bypass:
+      description: Be exempt from AAC hacking checks
+      default: op
+   AAC.admin:
+      description: Open a GUI to manage AAC
+      default: op
+   AAC.debug:
+      description: Save a file with detailed information on a player
+      default: op
+   AAC.verbose:
+      description: View AAC's debug messages.
+      default: false
+   AAC.message:
+      description: Send a message to players from AAC
+      default: op
+   AAC.notify:
+      description: Send and recieve messages to all staff
+      default: op
+   AAC.crash:
+      description: Crash a player
+      default: op
